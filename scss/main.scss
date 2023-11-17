@@ -1,0 +1,65 @@
+@import "./blocks/fonts";
+
+
+$light-blue: rgba(0, 210, 237, 1);
+$dark-blue: rgba(33, 30, 170, 1);
+$dark-gray:rgba(43, 43, 43, 1);
+
+
+body {
+    color: white;
+    background-color: black;
+    font-family: RobotoFlex, serif;
+}
+
+
+
+.background_highlighted {
+    background-color: $dark-gray;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 4px;
+
+    img {
+        max-height: 10px;
+        margin-right: 2px;
+    }
+
+}
+
+
+.wrapper {
+    max-width: 1000px;
+}
+
+
+.message {
+    display: flex;
+    flex-direction: column;
+
+    .message__title {
+        display: block;
+        width: max-content;
+        position: relative;
+
+        padding: 10px 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        background: #211EAA;
+        margin-bottom: -10px;
+        margin-left: 20px;
+
+    }
+    .message__desctiption {
+        display: block;
+        padding: 20px 26px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background-color: #FFF;
+        color: black;
+    }
+
+}
