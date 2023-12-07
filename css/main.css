@@ -3,6 +3,7 @@
   src: url("../fonts/RobotoFlex-Regular.woff2") format("woff2"), url("../fonts/RobotoFlex-Regular.ttf") format("ttf");
 }
 body {
+  zoom: 300%;
   color: white;
   background-color: black;
   font-family: RobotoFlex, serif;
@@ -19,8 +20,23 @@ body {
   margin-right: 2px;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: rgb(0, 210, 237);
+}
+
 .wrapper {
   max-width: 1000px;
+}
+
+.nastya {
+  float: right;
+  width: 100px;
+  height: 100px;
 }
 
 .message {

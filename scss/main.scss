@@ -1,5 +1,10 @@
 @import "./blocks/fonts";
 
+@font-face {
+    font-family: "RobotoFlex";
+    src: url('../fonts/RobotoFlex-Regular.woff2') format("woff2"),
+    url('../fonts/RobotoFlex-Regular.ttf') format("ttf")
+}
 
 $light-blue: rgba(0, 210, 237, 1);
 $dark-blue: rgba(33, 30, 170, 1);
@@ -7,6 +12,7 @@ $dark-gray:rgba(43, 43, 43, 1);
 
 
 body {
+    zoom: 300%;
     color: white;
     background-color: black;
     font-family: RobotoFlex, serif;
@@ -28,10 +34,25 @@ body {
 }
 
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: $light-blue;
+}
+
+
 .wrapper {
     max-width: 1000px;
 }
 
+.nastya {
+    float: right;
+    width: 100px;
+    height: 100px;
+}
 
 .message {
     display: flex;
