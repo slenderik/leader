@@ -1,9 +1,12 @@
-@import "./blocks/fonts";
-
 @font-face {
     font-family: "RobotoFlex";
-    src: url('../fonts/RobotoFlex-Regular.woff2') format("woff2"),
-    url('../fonts/RobotoFlex-Regular.ttf') format("ttf")
+    src: url('../assets/fonts/RobotoFlex-Regular.ttf') format("woff2"),
+    url('../assets/fonts/RobotoFlex-Regular.ttf') format("ttf")
+}
+
+@font-face {
+    font-family: "InterRegular";
+    src: url('../assets/fonts/Inter-Regular.ttf') format("ttf");
 }
 
 $light-blue: rgba(0, 210, 237, 1);
@@ -12,50 +15,86 @@ $dark-gray:rgba(43, 43, 43, 1);
 
 
 body {
-    zoom: 300%;
     color: white;
     background-color: black;
-    font-family: RobotoFlex, serif;
+    font-family: InterRegular;
 }
 
 
+.header {
+    position: sticky;
+    margin: auto;
+    max-width: 1000px;
 
-.background_highlighted {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-radius: 0px 0px 20px 20px;
+    padding: 0px 220px 0px 80px;
+    
     background-color: $dark-gray;
+
+    .header__item {
+        text-decoration: none;
+        color: white;
+    }
+    .header__item:hover {
+        color: $light-blue;
+    }
+
+    .header__logo {
+        width: 60px;
+        height: 60px;
+    }
+    .header__logo:hover {
+        cursor: pointer;
+    }
+        
+}
+
+.logo-zone {
+    h1 {
+        font-family: InterRegular;
+        font-size: 300px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 39px;
+        width: 100vw;
+        text-align: center;
+    }
+}
+
+
+.text_background_highlighted {
     color: white;
-    border-radius: 5px;
     padding: 2px 4px;
+    border-radius: 5px;
+    background-color: $dark-gray;
 
     img {
         max-height: 10px;
         margin-right: 2px;
     }
-
-}
-
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-a:hover {
-    color: $light-blue;
 }
 
 
 .wrapper {
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
     max-width: 1000px;
+    gap: 50px;
 }
 
-.nastya {
-    float: right;
-    width: 100px;
-    height: 100px;
-}
 
 .message {
     display: flex;
+    position: relative;
     flex-direction: column;
 
     .message__title {
@@ -73,6 +112,7 @@ a:hover {
         margin-left: 20px;
 
     }
+
     .message__desctiption {
         display: block;
         padding: 20px 26px;
@@ -81,6 +121,12 @@ a:hover {
         border-radius: 20px;
         background-color: #FFF;
         color: black;
+    }
+
+    .message__logo {
+        position: absolute;
+        top: 10px; left: -90px;
+        width: 70px; height: 70px;
     }
 
 }

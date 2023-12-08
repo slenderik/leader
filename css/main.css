@@ -1,46 +1,78 @@
 @font-face {
   font-family: "RobotoFlex";
-  src: url("../fonts/RobotoFlex-Regular.woff2") format("woff2"), url("../fonts/RobotoFlex-Regular.ttf") format("ttf");
+  src: url("../assets/fonts/RobotoFlex-Regular.ttf") format("woff2"), url("../assets/fonts/RobotoFlex-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "InterRegular";
+  src: url("../assets/fonts/Inter-Regular.ttf") format("ttf");
 }
 body {
-  zoom: 300%;
   color: white;
   background-color: black;
-  font-family: RobotoFlex, serif;
+  font-family: InterRegular;
 }
 
-.background_highlighted {
+.header {
+  position: sticky;
+  margin: auto;
+  max-width: 1000px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 0px 0px 20px 20px;
+  padding: 0px 220px 0px 80px;
   background-color: rgb(43, 43, 43);
-  color: white;
-  border-radius: 5px;
-  padding: 2px 4px;
 }
-.background_highlighted img {
+.header .header__item {
+  text-decoration: none;
+  color: white;
+}
+.header .header__item:hover {
+  color: rgb(0, 210, 237);
+}
+.header .header__logo {
+  width: 60px;
+  height: 60px;
+}
+.header .header__logo:hover {
+  cursor: pointer;
+}
+
+.logo-zone h1 {
+  font-family: InterRegular;
+  font-size: 300px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 39px;
+  width: 100vw;
+  text-align: center;
+}
+
+.text_background_highlighted {
+  color: white;
+  padding: 2px 4px;
+  border-radius: 5px;
+  background-color: rgb(43, 43, 43);
+}
+.text_background_highlighted img {
   max-height: 10px;
   margin-right: 2px;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a:hover {
-  color: rgb(0, 210, 237);
-}
-
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
   max-width: 1000px;
-}
-
-.nastya {
-  float: right;
-  width: 100px;
-  height: 100px;
+  gap: 50px;
 }
 
 .message {
   display: flex;
+  position: relative;
   flex-direction: column;
 }
 .message .message__title {
@@ -65,4 +97,11 @@ a:hover {
   border-radius: 20px;
   background-color: #FFF;
   color: black;
+}
+.message .message__logo {
+  position: absolute;
+  top: 10px;
+  left: -90px;
+  width: 70px;
+  height: 70px;
 }/*# sourceMappingURL=main.css.map */
