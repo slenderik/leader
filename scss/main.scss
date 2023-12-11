@@ -1,12 +1,21 @@
 @font-face {
-    font-family: "RobotoFlex";
-    src: url('../assets/fonts/RobotoFlex-Regular.ttf') format("woff2"),
-    url('../assets/fonts/RobotoFlex-Regular.ttf') format("ttf")
+    font-family: "RobotoFlexRegular";
+    src: url(../assets/fonts/RobotoFlex-Regular.ttf);
 }
 
 @font-face {
-    font-family: "InterRegular";
-    src: url('../assets/fonts/Inter-Regular.ttf') format("ttf");
+    font-family: "InterRegular"; //400 px
+    src: url(../assets/fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: "InterBold"; //400 px
+    src: url(../assets/fonts/Inter-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Cyberpunk"; //400 px
+    src: url(../assets/fonts/Cyberpunk.ttf);
 }
 
 $light-blue: rgba(0, 210, 237, 1);
@@ -30,7 +39,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     border-radius: 0px 0px 20px 20px;
     padding: 0px 220px 0px 80px;
@@ -56,20 +65,34 @@ body {
 }
 
 .logo-zone {
-    h1 {
-        font-family: InterRegular;
-        font-size: 300px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: 39px;
-        width: 100vw;
-        text-align: center;
+    display: flex;
+    position: relative;
+    height: 400px;
+}
+
+.text__bordered {
+    font-family: Cyberpunk;
+    font-size: 300px;
+    position: absolute;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 39px;
+
+    text-shadow: -2px 0 $light-blue, 0 2px $light-blue, 2px 0 $light-blue, 0 -2px $light-blue;
+    background: #000;
+    color: black;
+
+    width: 100vw;
+    text-align: center;
+
+    .bg {
+        left: -20;
     }
 }
 
 
-.text_background_highlighted {
+.text__background-highlighted {
     color: white;
     padding: 2px 4px;
     border-radius: 5px;
@@ -102,6 +125,7 @@ body {
         width: max-content;
         position: relative;
 
+        font-size: 40px;
         padding: 10px 20px;
         flex-direction: column;
         justify-content: center;
@@ -115,11 +139,12 @@ body {
 
     .message__desctiption {
         display: block;
+        font-size: 24px;
         padding: 20px 26px;
         justify-content: center;
         align-items: center;
         border-radius: 20px;
-        background-color: #FFF;
+        background-color: white;
         color: black;
     }
 
@@ -128,5 +153,25 @@ body {
         top: 10px; left: -90px;
         width: 70px; height: 70px;
     }
+}
+
+.category {
+    display: inline-flex;
+    padding: 10px 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+.category__list-items {
+
+}
+.category__list__item {
 
 }
