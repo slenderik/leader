@@ -13,38 +13,65 @@
     src: url(../assets/fonts/Inter-Bold.ttf);
 }
 
-@font-face {
-    font-family: "Cyberpunk"; //400 px
-    src: url(../assets/fonts/Cyberpunk.ttf);
+
+
+:root {
+    --panel-bg-color: #2f3542;
+    --container-bg-color: #57606f;
+    --text-color: white;
+
+    --page-bg-color: #151818;
 }
+
+:root[theme='white'] {
+    --panel-bg-color: #dfe4ea;
+    --container-bg-color: #f1f2f6;
+    --text-color: black;
+
+    --main-color: ;
+    --opposite-color: ;
+
+    --page-bg-color: white;
+}
+
 
 $light-blue: rgba(0, 210, 237, 1);
 $dark-blue: rgba(33, 30, 170, 1);
-$dark-gray:rgba(43, 43, 43, 1);
+$dark-gray: rgba(43, 43, 43, 1);
 
 $background_color: #151818;
 
 body {
-    color: white;
-    background-color: $background_color;
+    color:  var(--text-color);
+    background-color: var(--page-bg-color);
     font-family: InterRegular;
 }
 
+.glowing-effect {
+    z-index: 9;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0px -64px 77px -29px rgba(0, 221, 255, 0.31) inset;
+    -moz-box-shadow: 0px -64px 77px -29px rgba(0, 221, 255, 0.31) inset;
+    box-shadow: 0px -64px 77px -29px rgba(0, 221, 255, 0.31) inset;
+}
 
-.header {
+
+h1 {
+    font-size: 50px;
+}
+
+
+header {
+    top: 0;
     position: sticky;
-    margin: auto;
-    max-width: 1000px;
-
-    height: 78px;
+    z-index: 3;
+    height: 40px;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
-
-    border-radius: 0px 0px 20px 20px;
-    padding: 0px 220px 0px 80px;
-    
     background-color: $dark-gray;
 
     .header__item {
@@ -54,33 +81,75 @@ body {
     .header__item:hover {
         color: $light-blue;
     }
-
-    .header__logo {
-        width: 60px;
-        height: 60px;
-    }
-    .header__logo:hover {
-        cursor: pointer;
-    }
-        
 }
 
-.logo-zone {
+.scroll-container {
+    gap: 30px;
+    display: flex;
     height: auto;
+}
+
+
+.text__BIG-BLUE {
+    text-align: justify;
+    color: $light-blue;
+}
+
+.logo-scroll {
+    display: block;
+}
+
+/* BUTTON STYLES */
+.arrow {
+    position: relative;
+    display: inline-block;
+
+    text-align: center;
+    text-decoration: none;
+
+    padding: 20px 0px;
+    width: 200px;
+
+    border-radius: 20px;
+    background-color: $dark-blue;
+    color: white;
+    transition: all 0.2s linear 0s;
+
+    &:before {
+        content: "\f178";
+        font-family: FontAwesome;
+        font-size: 15px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        height: 100%;
+        width: 40px;
+        transition: all 0.2s linear 0s;
+    }
     
-    h1 {font-size: 15vw;}
+    &:hover {
+        text-indent: -20px;
+        
+        &:before {
+            opacity: 1;
+            text-indent: 0px;
+        }
+    }
 }
 
 .text__bordered {
-    font-family: Cyberpunk;
+    font-family: InterBold;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     letter-spacing: 39px;
 
     text-shadow: -2px 0 $light-blue, 0 2px $light-blue, 2px 0 $light-blue, 0 -2px $light-blue;
-    background: $background_color;
-    color: yellow;
+    color: var(--page-bg-color);
 
     width: 100vw;
     text-align: center;
@@ -100,24 +169,28 @@ body {
 }
 
 
-.content {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
+main {    
+    display: block;
     gap: 50px;
     margin: auto;
     max-width: 1000px;
-    height: 300px;
+}
+
+
+.logo {
+    top: 400px;
+    position: sticky;
+    float: left;
+    width: 70px; height: 70px;
 }
 
 .message {
-    flex: display;
-    position: relative;
-    flex-direction: row;
+    float: right;
+    display: block;
+    max-width: 930px;
 
     .message__title {
-        display: block;
+        display: flex;
         width: max-content;
         position: relative;
 
@@ -127,11 +200,11 @@ body {
         justify-content: center;
         align-items: center;
         border-radius: 30px;
-        background: #211EAA;
+        background: $dark-blue;
         margin-bottom: -10px;
         margin-left: 24px;
-
     }
+
     .message__desctiption {
         display: block;
         font-size: 1vw;
@@ -141,11 +214,7 @@ body {
         border-radius: 20px;
         background-color: white;
         color: black;
-    }
-    .message__logo {
-        position: absolute;
-        top: 10px; left: -90px;
-        width: 70px; height: 70px;
+        margin-bottom: 30px;
     }
 }
 
@@ -164,9 +233,112 @@ body {
     font-weight: 800;
     line-height: normal;
 }
-.category__list-items {
 
+
+
+footer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: black;
 }
-.category__list__item {
 
+
+
+
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: dark;
+}
+
+.snow-toggle {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+    border: 0;
+}
+
+.snow-toggle__label {
+    padding-bottom: 10px;
+}
+
+.snow-toggle__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.snow-toggle__text::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc(50% - 12px);
+    width: 25px;
+    height: 25px;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+.snow-toggle__control {
+    width: 25px;
+    height: 25px;
+    opacity: 0;
+    margin-right: 15px;
+}
+
+.snow-toggle__control:focus + .snow-toggle__text::before {
+    border-color: #2E9AFF;
+}
+
+.snow-toggle__control:checked + .snow-toggle__text::before {
+    background-color: #FFFFFF;
+    background: radial-gradient(
+        circle,
+        #FFFFFF 0%,
+        #FFFFFF 40%,
+        transparent 50%,
+        transparent 100%
+    );
+}
+
+.snow {
+    --animation-name: snowfall;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.snow__flake {
+    position: relative;
+    top: -1.5em;
+    color: #c1dcec;
+    animation-name: var(--animation-name);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(calc(100vh + 1.5em));
+    }
 }

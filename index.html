@@ -6,75 +6,249 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="C:\Users\mrsle\БлагоПРКТ\leader">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <meta name="description" content="Студенческий Сервисный отряд «Лидер». У нас летняя работа и обучение.">
-    <link
-        rel="preload"
-        href="../assets/fonts/Inter-Regular.ttf"
-        as="font"
-        type="font/ttf"
-        crossorigin="anonymous"
-    />
+    <link rel="preload" href="../assets/fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous"/>
 </head>
 <body>
-    <div class="header">
-        <a href="index.html"><img class="header__logo" src="assets/logos/leader_logo.svg" alt="Логотип"/></a>
-        <a class="header__item" href="index.html">Главная</a>
-        <a class="header__item" href="index.html">Новости</a>
-    </div>
+    <header>
+        <nav>
+            <a class="header__item" href="index.html">О нас</a>
+            <a class="header__item" href="news.html">Новости</a>
+            <a class="header__item" href="join.html">Вступить</a>
+        </nav>
+
+        <input type="button" value="Toggle" id="toggle-theme" />
+
+        <fieldset class="snow-toggle">
+            <label class="snow-toggle__item">
+                <input class="snow-toggle__control" type="radio" name="snow" value="snowfall" checked>
+                <span class="snow-toggle__text">Снег</span>
+            </label>
+            <label class="snow-toggle__item">
+                <input class="snow-toggle__control" type="radio" name="snow" value="none">
+                <span class="snow-toggle__text">Без осадков</span>
+            </label>
+        </fieldset>
+    </header>
     
+    <!--
+    <a class="arrow" href="https://docs.google.com/forms/d/e/1FAIpQLSeILR1xSkAcIzfRKm9rJKnyqQDY8T3zfkW59ij5OLf_3toLew/viewform">Вступить в отряд</a>
 
-    <div class="logo-zone">
-        <h1 class="text__bordered">ЛИДЕР</h1>
-    </div>
-    
-    <div class="content">
+    <div class="glowing-effect"></div>
+    -->
+    <main>
 
-        <div class="message">
-            <div class="message__title">Сервисный</div>
-            <div class="message__desctiption">
-                Работаем в сфере обслуживания: официанты, помощники бармены и горничные. 
-                Всему не обучают на месте, мы предварительно проходим курсы проф. обучения. 
-                Это так же помогает понять, а нравится ли тебе этим заниматься.
+        <h1>Что такое cтудотряд?</h1>
+
+        <!--
+            В пределах scroll-container ограничивает logo-scrol и месседж. 
+        -->
+        <div class="scroll-container">
+            <div class="logo-scroll">
+                <img class="logo" src="assets/logos/leader_logo.svg" alt="лого лидера">
             </div>
-            <img class="message__logo logo" src="assets/logos/leader_logo.svg" alt="лого лидера">
-        </div>
 
-        <div class="message">
-            <div class="message__title">Студенческий</div>
-            <div class="message__desctiption">
-                Работаем в сфере обслуживания: официанты, помощники бармены и горничные.
-                Всему не обучают на месте, мы предварительно проходим курсы проф. обучения.
-                Это так же помогает понять, а нравится ли тебе этим заниматься.
-            </div>
-            <img class="message__logo" src="assets/logos/leader_logo.svg" alt="лого лидера">
-        </div>
-
-        <div class="message">
-            <img class="message__logo" src="assets/logos/leader_logo.svg" alt="лого лидера">
-            <div>
-                <div class="message__title">Отряд — Мероприятия, целина и друзья</div>
+            <div class="message">
+                <div class="message__title">
+                    Сервисный
+                </div>
                 <div class="message__desctiption">
-                    <p>
-                        <strong>Мероприятия.</strong> У нас часто проходят ивенты и всякий движ: от спартакиад и разминок до танцев, спевок, трудового выходного в лагере. <br>
-                        <br>
-                        <strong>Друзья.</strong> Уже дома или на целине понимаешь что познакомился с удивительными людьми, а может и нашёл лучших друзей.<br>
-                        <br>
-                        <strong>Целина.</strong> Лучшее время отряда. Курорты приглашают отряды на работу. <br>
-                        Условия работы сразу и чётко рассказываются нам.
-                        Регион и место работы выбирает командирский состав отряда.
-                        Подаём заявки, ждём одобрения. Собираемся, покупаем билетики, собираем вещички и отправляемся. На месте подписываем трудовой договор. Работаем, отдыхаем. Лето заканчивается — отправляемся обратно домой.<br>
-                        <br>
-                    </p>
+                    Работаем в сфере обслуживания: официанты, помощники бармены и горничные. 
+                    Всему не обучают на месте, мы предварительно проходим курсы проф. обучения. 
+                    Это так же помогает понять, а нравится ли тебе этим заниматься.
+                </div>
+
+                <div class="message__title">
+                    Студенческий
+                </div>
+                <div class="message__desctiption">
+                    Работаем в сфере обслуживания: официанты, помощники бармены и горничные.
+                    Всему не обучают на месте, мы предварительно проходим курсы проф. обучения.
+                    Это так же помогает понять, а нравится ли тебе этим заниматься.
+                </div>
+
+                <div class="message__title">
+                    Отряд — Мероприятия, целина и друзья
+                </div>
+                <div class="message__desctiption">
+                    <strong>Мероприятия.</strong> У нас часто проходят ивенты и всякий движ: от спартакиад и разминок до танцев, спевок или слёт в палаточном лагере.<br>
+                    <br>
+                    <strong>Друзья.</strong> Уже дома понимаешь что познакомился с удивительными людьми, а может и нашёл лучших друзей.<br>
+                    <br>
+                    <strong>Целина.</strong> Лучшее время отряда. Курорты приглашают отряды на работу. <br>
+                    Условия работы сразу и чётко рассказываются нам.
+                    Регион и место работы выбирает командирский состав отряда.
+                    Подаём заявки, ждём одобрения. Собираемся, покупаем билетики, собираем вещички и отправляемся. На месте подписываем трудовой договор. Работаем, отдыхаем. Лето заканчивается — отправляемся обратно домой.<br>
+                    <br>
                 </div>
             </div>
         </div>
+    </main>
 
-        
+    <div class="snow" aria-hidden="true">
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
+        <div class="snow__flake">*</div>
     </div>
-    <footer>
+    
 
+    <footer>
+        <p>© 2023-2023</p>
     </footer>
 
+    <script>
+        //темы с метанита
+        const toggleBtn = document.querySelector("#toggle-theme");
+            toggleBtn.addEventListener("click", function() {
+            if(document.documentElement.hasAttribute("theme")){
+                document.documentElement.removeAttribute("theme");
+            }
+            else{
+                document.documentElement.setAttribute("theme", "white");
+            }
+        }); 
+
+        /* 
+        
+        Это снег с доки
+
+        */
+        const storageKey = 'snow'
+        const snow = document.querySelector('.snow')
+        const snowflakes = document.querySelectorAll('.snow__flake')
+        const snowToggle = document.querySelector('.snow-toggle')
+    
+        function getRndInteger(min, max) {
+          return Math.floor(Math.random() * (max - min + 1) ) + min
+        }
+    
+        function getRndFloat(min, max) {
+          return (Math.random() * (max - min) + min).toFixed(1)
+        }
+    
+        snowflakes.forEach(snowflake => {
+          snowflake.style.fontSize = getRndFloat(0.7, 1.5) + 'em'
+          snowflake.style.animationDuration = getRndInteger(20, 30) + 's'
+          snowflake.style.animationDelay = getRndInteger(-1, snowflakes.length / 2) + 's'
+        })
+    
+        function changeSnowAnimation(animationName) {
+          snow.style.setProperty('--animation-name',  animationName)
+        }
+    
+        snowToggle.addEventListener('change', event => {
+          changeSnowAnimation(event.target.value)
+          localStorage.setItem(storageKey, event.target.value)
+        })
+    
+        document.addEventListener('DOMContentLoaded', () => {
+          let currentStorage = localStorage.getItem(storageKey)
+    
+          if (currentStorage) {
+            snowToggle.querySelector(`.snow-toggle__control[value='${currentStorage}']`).checked = true
+          }
+    
+          changeSnowAnimation(currentStorage)
+    
+          window.addEventListener('storage', () => {
+            changeSnowAnimation(localStorage.getItem(storageKey))
+          })
+        })
+      </script>
 </body>
 </html>
