@@ -2,21 +2,22 @@ h1 {
   font-size: 50px;
 }
 
-.header2-container {
+.header-container {
   padding: 5px;
   display: flex;
   flex-direction: row;
 }
 
-.header2-container__link-icon {
+.header-container__icon-link {
   margin-left: 5px;
   min-width: 30px;
   min-height: 30px;
+  visibility: collapse;
   background: url("/assets/icons/link_icon.png") top left/30px 30px no-repeat;
 }
 
-.header2-container__link-icon:hover {
-  cursor: pointer;
+.header-container:hover > .header-container__icon-link {
+  visibility: visible;
 }
 
 a {
