@@ -1,3 +1,11 @@
+@import "./blocks/text_format";
+@import "./blocks/snow_effect";
+@import "./blocks/header";
+@import "./blocks/message";
+@import "./blocks/footer";
+@import "./blocks/page_about";
+
+
 @font-face {
     font-family: "RobotoFlexRegular";
     src: url(../assets/fonts/RobotoFlex-Regular.ttf);
@@ -13,14 +21,14 @@
     src: url(../assets/fonts/Inter-Bold.ttf);
 }
 
-
-
 :root {
     --panel-bg-color: #2f3542;
     --container-bg-color: #57606f;
     --text-color: white;
 
     --page-bg-color: #151818;
+
+    --invert-index: 0;
 }
 
 :root[theme='white'] {
@@ -32,20 +40,31 @@
     --opposite-color: ;
 
     --page-bg-color: white;
+    --invert-index: 1;
 }
 
-
-$light-blue: rgba(0, 210, 237, 1);
-$dark-blue: rgba(33, 30, 170, 1);
-$dark-gray: rgba(43, 43, 43, 1);
-
-$background_color: #151818;
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    color:  var(--text-color);
-    background-color: var(--page-bg-color);
+    filter: invert(var(--invert-index));
     font-family: InterRegular;
+    color: var(--text-color);
+    background-color: var(--page-bg-color);
 }
+
+main {    
+    display: block;
+    gap: 50px;
+    margin: auto;
+    max-width: 1000px;
+
+    color-scheme: dark; // from snow format
+}
+
 
 .glowing-effect {
     z-index: 9;
@@ -55,290 +74,4 @@ body {
     -webkit-box-shadow: 0px -64px 77px -29px rgba(0, 221, 255, 0.31) inset;
     -moz-box-shadow: 0px -64px 77px -29px rgba(0, 221, 255, 0.31) inset;
     box-shadow: 0px -64px 77px -29px rgba(0, 221, 255, 0.31) inset;
-}
-
-
-h1 {
-    font-size: 50px;
-}
-
-
-header {
-    top: 0;
-    position: sticky;
-    z-index: 3;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: $dark-gray;
-
-    .header__item {
-        text-decoration: none;
-        color: white;
-    }
-    .header__item:hover {
-        color: $light-blue;
-    }
-}
-
-.scroll-container {
-    gap: 30px;
-    display: flex;
-    height: auto;
-}
-
-
-.text__BIG-BLUE {
-    text-align: justify;
-    color: $light-blue;
-}
-
-.logo-scroll {
-    display: block;
-}
-
-/* BUTTON STYLES */
-.arrow {
-    position: relative;
-    display: inline-block;
-
-    text-align: center;
-    text-decoration: none;
-
-    padding: 20px 0px;
-    width: 200px;
-
-    border-radius: 20px;
-    background-color: $dark-blue;
-    color: white;
-    transition: all 0.2s linear 0s;
-
-    &:before {
-        content: "\f178";
-        font-family: FontAwesome;
-        font-size: 15px;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        right: 0;
-        top: 0;
-        opacity: 0;
-        height: 100%;
-        width: 40px;
-        transition: all 0.2s linear 0s;
-    }
-    
-    &:hover {
-        text-indent: -20px;
-        
-        &:before {
-            opacity: 1;
-            text-indent: 0px;
-        }
-    }
-}
-
-.text__bordered {
-    font-family: InterBold;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 39px;
-
-    text-shadow: -2px 0 $light-blue, 0 2px $light-blue, 2px 0 $light-blue, 0 -2px $light-blue;
-    color: var(--page-bg-color);
-
-    width: 100vw;
-    text-align: center;
-}
-
-
-.text__background-highlighted {
-    color: white;
-    padding: 2px 4px;
-    border-radius: 5px;
-    background-color: $dark-gray;
-
-    img {
-        max-height: 10px;
-        margin-right: 2px;
-    }
-}
-
-
-main {    
-    display: block;
-    gap: 50px;
-    margin: auto;
-    max-width: 1000px;
-}
-
-
-.logo {
-    top: 400px;
-    position: sticky;
-    float: left;
-    width: 70px; height: 70px;
-}
-
-.message {
-    float: right;
-    display: block;
-    max-width: 930px;
-
-    .message__title {
-        display: flex;
-        width: max-content;
-        position: relative;
-
-        font-size: 2.08vw;
-        padding: 10px 20px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 30px;
-        background: $dark-blue;
-        margin-bottom: -10px;
-        margin-left: 24px;
-    }
-
-    .message__desctiption {
-        display: block;
-        font-size: 1vw;
-        padding: 20px 26px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        background-color: white;
-        color: black;
-        margin-bottom: 30px;
-    }
-}
-
-
-.category {
-    display: inline-flex;
-    padding: 10px 20px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    color: #FFF;
-    font-family: Inter;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-}
-
-
-
-footer {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    background-color: black;
-}
-
-
-
-
-
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    color-scheme: dark;
-}
-
-.snow-toggle {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    margin: 0;
-    gap: 40px;
-    border: 0;
-}
-
-.snow-toggle__label {
-    padding-bottom: 10px;
-}
-
-.snow-toggle__item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.snow-toggle__text::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: calc(50% - 12px);
-    width: 25px;
-    height: 25px;
-    border: 1px solid #FFFFFF;
-    border-radius: 50%;
-}
-
-.snow-toggle__control {
-    width: 25px;
-    height: 25px;
-    opacity: 0;
-    margin-right: 15px;
-}
-
-.snow-toggle__control:focus + .snow-toggle__text::before {
-    border-color: #2E9AFF;
-}
-
-.snow-toggle__control:checked + .snow-toggle__text::before {
-    background-color: #FFFFFF;
-    background: radial-gradient(
-        circle,
-        #FFFFFF 0%,
-        #FFFFFF 40%,
-        transparent 50%,
-        transparent 100%
-    );
-}
-
-.snow {
-    --animation-name: snowfall;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    pointer-events: none;
-}
-
-.snow__flake {
-    position: relative;
-    top: -1.5em;
-    color: #c1dcec;
-    animation-name: var(--animation-name);
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    will-change: transform;
-}
-
-@keyframes snowfall {
-    0% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(calc(100vh + 1.5em));
-    }
 }

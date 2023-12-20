@@ -1,0 +1,16 @@
+.about__inner-container {
+    gap: 30px;
+    display: flex;
+    height: auto;
+
+    .about__inner-container__sticky-logo {
+        top: 200px;
+        position: sticky;
+        float: left;
+        width: 70px; height: 70px;
+    }
+    
+    .about__inner-container__logo-scroll-container {
+        display: block;
+    }
+}

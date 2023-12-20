@@ -1,0 +1,77 @@
+@import "./fonts";
+
+
+h1 {
+    font-size: 50px;
+}
+
+
+.header2-container {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.header2-container__link-icon {
+    margin-left: 5px;
+    min-width: 30px;
+    min-height: 30px;
+
+    background: url('/assets/icons/link_icon.png') top left/30px 30px no-repeat;
+}
+
+.header2-container__link-icon:hover{
+    cursor: pointer;
+}
+
+
+
+a {
+    width: max-content;
+    height: max-content;
+}
+
+
+.blue-heart { // not work
+    color: aqua;
+    background-image: url(".../assets/images/blue_heart.svg");
+}
+
+
+
+.text__style-stroke {
+    text-align: justify;
+}
+
+.text__color-blue {
+    color: $light-blue;
+}
+
+.text__bordered {
+    width: 100vw;
+    text-align: center;
+
+    font-weight: 700;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 40px;
+
+    text-shadow:
+        -2px 0 $light-blue,
+        0 2px $light-blue,
+        2px 0 $light-blue,
+        0 -2px $light-blue;
+}
+
+
+.text__background-highlighted {
+    color: white;
+    padding: 2px 4px;
+    border-radius: 5px;
+    background-color: $dark-gray;
+
+    img {
+        max-height: 10px;
+        margin-right: 2px;
+    }
+}

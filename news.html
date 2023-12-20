@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>ССервО Лидер</title>
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
@@ -15,13 +14,7 @@
     <meta name="msapplication-TileImage" content="assets/favicons/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <meta name="description" content="Студенческий Сервисный отряд «Лидер». У нас летняя работа и обучение.">
-    <link
-        rel="preload"
-        href="../assets/fonts/Inter-Regular.ttf"
-        as="font"
-        type="font/ttf"
-        crossorigin="anonymous"
-    />
+    <link rel="preload" href="../assets/fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous"/>
 </head>
 <body>
     <header>
@@ -33,9 +26,32 @@
     </header>
 
     <main>
-        <h1>Заголовок!</h1>
-
-        <h2>Ого! это подтема</h2>
+        <div class="header2-container">
+            <h2 id="header2anime">ХЯ! Подтема!</h2>
+            <div class="header2-container__link-icon" onclick="copyToClipboard('news', 'header2anime')">
+            </div>
+        </div>
     </main>
-</body>
+    
+    <footer>
+        <div class="footer__inner-container">
+            <div class="footer__text-container">
+                <h2>Спасибо что посетили нас <span class="blue-heart">---</span></h2>
+                <div class="">
+                    <a href="https://vk.com/club212580879" target="_blank"><img src="assets/logos/VK_logo.png"></a>
+                    <a href="https://t.me/lso_sservo_leader" target="_blank"><img src="assets/logos/TG_logo.png"></a>
+                    <a href="https://ru.pinterest.com/lso_leader/" target="_blank"><img src="assets/logos/pinterest_logo.png"></a>
+                </div>
+                <hr>
+                <p>Студенческий Сервисный Отряд «Лидер» © 2023-2023</p>
+            </div>
+            <div class="footer__logo-container">
+                <a title="РСО" href="https://трудкрут.рф/" target="_blank"><img src="/assets/logos/RSO_LOGO_WHITE.png"></a>
+                <a title="ООСО" href="https://studotrayd.ru/" target="_blank"><img src="/assets/logos/OOSO_LOGO_WHITE.png"></a>
+                <a title="КИТЭК" href="https://omsktec.ru/" target="_blank"><img src="/assets/logos/KITEK_LOGO_WHITE.png"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="./JS/copy.js"></script>
+</body> 
 </html>
